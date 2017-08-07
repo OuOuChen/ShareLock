@@ -1,0 +1,153 @@
+
+
+#import <Foundation/Foundation.h>
+#import "RecordView.h"
+
+typedef void(^RefreshAndLoadMoreHandle)(void);
+
+@interface NSString(Extra)
+
+- (NSNumber *)numberValue;
+
+- (NSDate *)dateValue;
+
+- (NSDate *)dateValueForDate;
+
+- (NSDate *)dateValueWithFormatString:(NSString *)formatString;
+
+@end
+
+@interface SystemUtils : NSObject
+
+
+/** 获取当前网络 */
++ (NSString *)getNetworkType;
+/** 开始下拉刷新 */
++ (void)beginPullRefreshForScrollView:(UIScrollView *)scrollView;
+
+/** 判断头部是否在刷新 */
++ (BOOL)headerIsRefreshForScrollView:(UIScrollView *)scrollView;
+
+/** 判断是否尾部在刷新 */
++ (BOOL)footerIsLoadingForScrollView:(UIScrollView *)scrollView;
+
+/** 提示没有更多数据的情况 */
++ (void)noticeNoMoreDataForScrollView:(UIScrollView *)scrollView;
+
+/**   重置footer */
++ (void)resetNoMoreDataForScrollView:(UIScrollView *)scrollView;
+
+/**  停止下拉刷新 */
++ (void)endRefreshForScrollView:(UIScrollView *)scrollView;
+
+/**  停止上拉加载 */
++ (void)endLoadMoreForScrollView:(UIScrollView *)scrollView;
+
+/**  隐藏footer */
++ (void)hiddenFooterForScrollView:(UIScrollView *)scrollView;
+
+/** 隐藏header */
++ (void)hiddenHeaderForScrollView:(UIScrollView *)scrollView;
+
+/** 下拉刷新 */
++ (void)addLoadMoreForScrollView:(UIScrollView *)scrollView
+                loadMoreCallBack:(RefreshAndLoadMoreHandle)loadMoreCallBackBlock;
+
+/** 上拉加载 */
++ (void)addPullRefreshForScrollView:(UIScrollView *)scrollView
+                pullRefreshCallBack:(RefreshAndLoadMoreHandle)pullRefreshCallBackBlock;
+
+/** 时间戳转时间 YYYY-MM-dd HH:mm:ss */
++(NSString *)DateStringFromDateStamp:(NSTimeInterval)DateStamp styleFormatter:(NSString *)styleFormatter;
+
+//根据指定时间的字符串格式和时间 格式例如yyyy-MM-dd HH:mm:ss:SSS
++ (NSString *)stringDateByFormatString:(NSString *) formatString withDate:(NSDate *)date;
+
+/**
+ double转换为string（去除无效的位数）
+
+ @param doubleValue 浮点数
+ @return 字符串
+ */
++ (NSString *)doubleToString:(double)doubleValue;
+
+/**
+ 拼接规格字符串，格式如：20000:3275069;1753146:3485013
+ 
+ @return 格式字符串
+ */
++(NSString *)joineSpecString:(NSString *)jsonStr;
+
+/** 字符串转换成日期 */
++ (NSDate *)dateFromString:(NSString *)datestring withFormatString:(NSString *)formatString;
+
+
+/**
+ 金额转换千位符显示
+
+ @param numStr 传入数字类型
+ @return 返回字符串
+ */
++ (NSString *)separatedDigitStringWithStr:(NSNumber *)numStr;
+
+
+/**
+ 金额转换千位符显示 一位小数
+ 
+ @param numStr 传入数字类型
+ @return 返回字符串
+ */
++ (NSString *)separatedInterceptAdecimalNumberStr:(NSNumber *)numStr;
+
+/**
+ 规格数组转换为k:v,k:v类型的字符串
+
+ @param spacArray 规格数组
+ @return k:v,k:v类型的字符串
+ */
++ (NSString *)spacComponentsJoinedByString:(NSArray *) spacArray;
+
+//时间戳转换为时间
++(NSDate *)timespConvertDate:(long)timeStr;
+
+//取昨天的日期
++ (NSString *)getYesterdayDate:(NSDate *)nowDate numDay:(int)numDay;
+
+//计算当前日期的星期
++ (long)getDayWeek:(NSDate *)dateNow;
+
+//把数字转换为星期
++ (NSString *)convertToWeekStr:(long)weekNumber;
+
+//获取一星期的始末日期
++ (NSDictionary *)getMonthBeginAndEndWith:(NSDate *)newDate withType:(int)type;
+
+
+/**
+ 保留自定义小数点位数(不四舍五入)
+
+ @param price 原数据
+ @param position 截取的位置
+ @return 截取后的字符串
+ */
++(NSString *)notRounding:(float)price afterPoint:(int)position;
+
+
+/**
+ 获取音频时长
+
+ @param videoUrl 音频URL
+ @return 时长
+ */
++ (NSUInteger)durationWithVideo:(NSURL *)videoUrl;
+
+
+/**
+ 获取版本号
+
+ @return 版本号（eg:1.0.1）
+ */
++(NSString *)getAppVersion;
+
+
+@end

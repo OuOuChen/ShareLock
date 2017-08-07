@@ -1,0 +1,57 @@
+//
+//  PrefixHeader.pch
+//  ShareLock
+//
+//  Created by 陈区 on 2017/7/5.
+//  Copyright © 2017年 陈区. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef __OBJC__
+
+#define ZXNWeakSelf(type)   __weak typeof(type) weak##type = type;
+
+
+#pragma mark - H file
+
+#import "ZXNLocationGaoDeManager.h"
+#import "Masonry.h"
+
+#import <AMapFoundationKit/AMapFoundationKit.h>
+#import <MAMapKit/MAMapKit.h>
+#import <AMapNaviKit/AMapNaviKit.h>
+
+#import "SystemConfigKeyDefine.h"
+#import "SystemUtils.h"
+#import "CommonDefine.h"
+#import "Theme.h"
+#import "CommonDefine.h"
+#import "FileCacheManager.h"
+#import "ProgressHUD.h"
+#import "NotificationNameDefine.h"
+#import "SystemTypeDefine.h"
+#import "MJExtension.h"
+#import "UIView+Extension.h"
+#import "UIImage+Extension.h"
+#import "UIImageView+WebCache.h"
+#import "UITableView+LSEmpty.h"
+#import "UIColor+HcdCustom.h"
+#import "Business.h"
+
+#pragma mark - The three parties
+#import "MJRefresh.h"
+#import "CocoaLumberjack.h"
+
+#ifdef DEBUG
+static const int ddLogLevel = DDLogLevelVerbose;
+#else
+static const int ddLogLevel = DDLogLevelError;
+#endif
+
+
+
+#endif
+
+#endif /* PrefixHeader_pch */

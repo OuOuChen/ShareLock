@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="COPayHistoryCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO.755061394" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB5-Ju-aXm">
+                        <rect key="frame" x="8" y="5" width="205" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.00元" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9r-of-ZdK">
+                        <rect key="frame" x="256" y="8" width="111" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="111" id="peB-Oc-7k9"/>
+                            <constraint firstAttribute="height" constant="17" id="qkd-f2-wRV"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017-7-24 15:06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEf-Dn-ync">
+                        <rect key="frame" x="8" y="26" width="223" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5XS-hX-c1D">
+                        <rect key="frame" x="256" y="26" width="111" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="h9r-of-ZdK" secondAttribute="trailing" id="4ZS-Jb-luj"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="lEf-Dn-ync" secondAttribute="bottom" constant="-0.5" id="AYk-oD-Ap4"/>
+                    <constraint firstItem="h9r-of-ZdK" firstAttribute="leading" secondItem="5XS-hX-c1D" secondAttribute="leading" id="Bzu-um-H4Z"/>
+                    <constraint firstItem="h9r-of-ZdK" firstAttribute="leading" secondItem="PB5-Ju-aXm" secondAttribute="trailing" constant="43" id="HBr-79-Uzb"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="PB5-Ju-aXm" secondAttribute="leading" id="IHz-wd-3I2"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="lEf-Dn-ync" secondAttribute="leading" id="Jhr-o5-OtZ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="5XS-hX-c1D" secondAttribute="trailing" id="Uwh-bK-v6p"/>
+                    <constraint firstItem="5XS-hX-c1D" firstAttribute="leading" secondItem="lEf-Dn-ync" secondAttribute="trailing" constant="25" id="dfC-gg-ZXn"/>
+                    <constraint firstItem="5XS-hX-c1D" firstAttribute="top" secondItem="h9r-of-ZdK" secondAttribute="bottom" constant="1" id="eIC-EF-2JF"/>
+                    <constraint firstItem="lEf-Dn-ync" firstAttribute="top" secondItem="5XS-hX-c1D" secondAttribute="top" id="gN9-Ws-m8s"/>
+                    <constraint firstItem="lEf-Dn-ync" firstAttribute="top" secondItem="PB5-Ju-aXm" secondAttribute="bottom" id="oZ9-bj-Ltn"/>
+                    <constraint firstItem="h9r-of-ZdK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="pwj-FT-1gb"/>
+                    <constraint firstItem="PB5-Ju-aXm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-3" id="wuT-9e-KeQ"/>
+                    <constraint firstItem="lEf-Dn-ync" firstAttribute="bottom" secondItem="5XS-hX-c1D" secondAttribute="bottom" id="xIC-1J-Q4Y"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="moneyLable" destination="h9r-of-ZdK" id="33y-63-JhN"/>
+                <outlet property="nunberID" destination="PB5-Ju-aXm" id="RUZ-vE-cKg"/>
+                <outlet property="payTypeLable" destination="5XS-hX-c1D" id="mng-E7-bfx"/>
+                <outlet property="timeLable" destination="lEf-Dn-ync" id="GhK-Xo-aLc"/>
+            </connections>
+            <point key="canvasLocation" x="79.5" y="59.5"/>
+        </tableViewCell>
+    </objects>
+</document>

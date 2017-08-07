@@ -1,0 +1,127 @@
+//
+//  SinceRoleUtil.m
+//  WITC.SKX
+//
+//  Created by shikexing on 2017/6/5.
+//  Copyright © 2017年 com.witc. All rights reserved.
+//
+
+#import "SinceRoleUtil.h"
+
+
+
+
+@implementation SinceRoleUtil
+
+#pragma mark - 自采角色判断
++ (BOOL)isRoleAuthority:(NSString *)roleId{
+    NSArray *arrStr = kgetUserValueKey(UserinfoArr);
+    
+    if ([arrStr containsObject:roleId]) {
+        return YES;
+    }
+    return NO;
+}
+
++ (BOOL)isPurchase_selfApplyOrderRole{
+    return [self isRoleAuthority:kPurchase_selfApplyOrderRole];
+}
+
++ (BOOL)isPurchase_selfOneAuditRole{
+    return [self isRoleAuthority:kPurchase_selfOneAuditRole];
+}
+
++ (BOOL)isPurchase_selfTwoAuditRole{
+    return [self isRoleAuthority:kPurchase_selfTwoAuditRole];
+}
+
+//SINCE_STATUS_SUBMIT_WAIT = 0,/*  待提交 */
+//SINCE_STATUS_CHECK_PENDING = 1,/* 待审核 */
+//SINCE_STATUS_CHECK_PENDED = 2,/* 已初审 */
+//SINCE_STATUS_CHECKED = 3,   /*  已审核 */
+//SINCE_STATUS_CHECKING_WATI = 4, /* 待验收 */
+//SINCE_STATUS_CHECK_BACK = 5, /*  已退回 */
+//SINCE_STATUS_CHECK_FINISH = 6 /*  已完成 */
+
+//APPLICATIONS_MODEL_PURCHASE_SELF_APPLYORDER,   /*  自采申请 */
+//APPLICATIONS_MODEL_PURCHASE_SELF_ONEAUDIT,   /*  自采一级审核 */
+//APPLICATIONS_MODEL_PURCHASE_SELF_TWOAUDIT,   /*  自采二级审核 */
+
+#pragma mark - 添加编辑自采单权限
+
+
+#pragma mark - 详情底部按钮权限
+// 详情底部复制新增自采申请单按钮
++ (BOOL)isPurchase_selfDetailAddSinceOrder:(NSInteger)billStatus roleType:(NSInteger)roleType{
+    // 自采员,只要不是待验收都可以复制自采单
+    if(billStatus != SINCE_STATUS_CHECKING_WATI && roleType == APPLICATIONS_MODEL_PURCHASE_SELF_APPLYORDER){
+        return YES;
+    }
+    return NO;
+}
+
+// 详情底部批量验收按钮
++ (BOOL)isPurchase_selfDetailBatchCheck:(NSInteger)billStatus roleType:(NSInteger)roleType{
+    // 一级审核,只有待验收,才能批量验收
+    if(billStatus == SINCE_STATUS_CHECKING_WATI && roleType == APPLICATIONS_MODEL_PURCHASE_SELF_APPLYORDER){
+        return YES;
+    }
+    return NO;
+    
+}
+
+// 详情底部修改审批按钮
++ (BOOL)isPurchase_selfDetailUpdateAndAudit:(NSInteger)billStatus roleType:(NSInteger)roleType{
+    // 一级审核并且状态待审核 或者 二级审核并且状态已初审
+    if((billStatus == SINCE_STATUS_CHECK_PENDING && roleType == APPLICATIONS_MODEL_PURCHASE_SELF_ONEAUDIT) || (billStatus == SINCE_STATUS_CHECK_PENDED && roleType == APPLICATIONS_MODEL_PURCHASE_SELF_TWOAUDIT)){
+        return YES;
+    }
+    return NO;
+}
+
+// 详情底部已采购并上传凭证按钮
++ (BOOL)isPurchase_selfDetailPurchasedAndUploadCertificate:(NSInteger)billStatus roleType:(NSInteger)roleType{
+    // 一级审核并且状态为已审核或待验收
+    if((billStatus == SINCE_STATUS_CHECKED || billStatus == SINCE_STATUS_CHECKING_WATI) && roleType == APPLICATIONS_MODEL_PURCHASE_SELF_ONEAUDIT){
+        return YES;
+    }
+    return NO;
+}
+
+// 列表显示汇总分享按钮
++ (BOOL)isPurchase_selfListCollectShare:(NSInteger)billStatus roleType:(NSInteger)roleType{
+    // 一级审核并且状态为已审核
+    if((billStatus == SINCE_STATUS_CHECKED) && roleType == APPLICATIONS_MODEL_PURCHASE_SELF_ONEAUDIT){
+        return YES;
+    }
+    return NO;
+}
+
+// 一级&订单主项为待审核 ,用以一级提示一级用户输入参考价等
++ (BOOL)isPurchase_selfDetailRefprice:(SinceStatusType)billStatus roleType:(NSInteger)roleType{
+    // 一级审核并且订单主项状态为待审核
+    if((billStatus == SINCE_STATUS_CHECK_PENDING) && roleType == APPLICATIONS_MODEL_PURCHASE_SELF_ONEAUDIT){
+        return YES;
+    }
+    return NO;
+}
+
+// 一级&订单主项为已审核,用以控制订单详情中提示输入实才数量,实采价视图展示 输入 退回显示等
++ (BOOL)isPurchase_selfDetailReceive:(SinceStatusType)billStatus shopStatus:(SinceDetailShopStatusType)shopStatus roleType:(NSInteger)roleType{
+    // 一级审核并且订单主项状态为已审核或待验收
+    if([SinceRoleUtil isPurchase_selfDetailCertificate:billStatus roleType:roleType] && shopStatus == SINCE_SHOP_STATUS_CHECKED){
+        return YES;
+    }
+    return NO;
+}
+
+// 一级&订单主项为已审核或待验收 ,用以上报凭证或退回操作前置条件
++ (BOOL)isPurchase_selfDetailCertificate:(SinceStatusType)billStatus roleType:(NSInteger)roleType{
+    // 一级审核并且订单主项状态为已审核
+    if((billStatus == SINCE_STATUS_CHECKED || billStatus == SINCE_STATUS_CHECKING_WATI) && roleType == APPLICATIONS_MODEL_PURCHASE_SELF_ONEAUDIT){
+        return YES;
+    }
+    return NO;
+}
+
+@end

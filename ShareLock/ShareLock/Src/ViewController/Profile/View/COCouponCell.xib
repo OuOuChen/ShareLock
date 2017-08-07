@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="COCouponCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f9P-t8-4Pn">
+                        <rect key="frame" x="20" y="0.0" width="335" height="110"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新用户专享骑车卷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXV-Bo-aeY">
+                                <rect key="frame" x="8" y="8" width="139" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="bOC-hz-CIm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="有效期至2017.03.33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8h-75-Crb">
+                                <rect key="frame" x="8" y="73" width="253" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="很高兴您使用共享车锁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0q-3O-qd9">
+                                <rect key="frame" x="8" y="37" width="217" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="5qL-PG-B9i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aw8-yK-m0M">
+                                <rect key="frame" x="0.0" y="106" width="335" height="4"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="OkJ-0x-p0m"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.00元" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XpH-lD-Tl4">
+                                <rect key="frame" x="233" y="1" width="94" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="Axx-zW-f83"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h0q-3O-qd9" firstAttribute="top" secondItem="hXV-Bo-aeY" secondAttribute="bottom" constant="8" symbolic="YES" id="3qJ-Lz-tBh"/>
+                            <constraint firstItem="aw8-yK-m0M" firstAttribute="top" secondItem="C8h-75-Crb" secondAttribute="bottom" constant="12" id="BhT-ki-cgt"/>
+                            <constraint firstAttribute="trailing" secondItem="aw8-yK-m0M" secondAttribute="trailing" id="MZB-Eo-byh"/>
+                            <constraint firstItem="XpH-lD-Tl4" firstAttribute="top" secondItem="f9P-t8-4Pn" secondAttribute="top" constant="1" id="NHA-v2-P3L"/>
+                            <constraint firstItem="XpH-lD-Tl4" firstAttribute="leading" secondItem="h0q-3O-qd9" secondAttribute="trailing" constant="8" id="Nvm-5g-SXT"/>
+                            <constraint firstItem="hXV-Bo-aeY" firstAttribute="top" secondItem="f9P-t8-4Pn" secondAttribute="topMargin" id="QQY-oQ-S4u"/>
+                            <constraint firstItem="XpH-lD-Tl4" firstAttribute="leading" secondItem="hXV-Bo-aeY" secondAttribute="trailing" constant="86" id="SCu-1C-TtP"/>
+                            <constraint firstAttribute="bottom" secondItem="aw8-yK-m0M" secondAttribute="bottom" id="Z43-58-pBH"/>
+                            <constraint firstItem="h0q-3O-qd9" firstAttribute="bottom" secondItem="XpH-lD-Tl4" secondAttribute="bottom" id="amL-ez-Fzx"/>
+                            <constraint firstItem="h0q-3O-qd9" firstAttribute="leading" secondItem="f9P-t8-4Pn" secondAttribute="leading" constant="8" id="b9e-6q-UVa"/>
+                            <constraint firstItem="C8h-75-Crb" firstAttribute="top" secondItem="h0q-3O-qd9" secondAttribute="bottom" constant="15" id="nnN-ac-swv"/>
+                            <constraint firstAttribute="trailing" secondItem="C8h-75-Crb" secondAttribute="trailing" constant="74" id="tbV-bw-hFX"/>
+                            <constraint firstAttribute="trailing" secondItem="XpH-lD-Tl4" secondAttribute="trailing" constant="8" id="uMa-2z-EUx"/>
+                            <constraint firstItem="aw8-yK-m0M" firstAttribute="leading" secondItem="f9P-t8-4Pn" secondAttribute="leading" id="xWy-dI-KiM"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="C8h-75-Crb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="Sip-ym-TdE"/>
+                    <constraint firstAttribute="trailing" secondItem="f9P-t8-4Pn" secondAttribute="trailing" constant="20" id="Yow-N9-YYr"/>
+                    <constraint firstItem="f9P-t8-4Pn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ZZk-Bw-bDN"/>
+                    <constraint firstItem="f9P-t8-4Pn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eFQ-dy-uom"/>
+                    <constraint firstItem="hXV-Bo-aeY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="jbR-ug-ipg"/>
+                    <constraint firstAttribute="bottom" secondItem="f9P-t8-4Pn" secondAttribute="bottom" id="mqn-BT-ghH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="describe" destination="h0q-3O-qd9" id="zpI-5c-rcW"/>
+                <outlet property="lineView" destination="aw8-yK-m0M" id="Z1H-4z-f4Z"/>
+                <outlet property="money" destination="XpH-lD-Tl4" id="N7L-bi-av1"/>
+                <outlet property="name" destination="hXV-Bo-aeY" id="sFL-ev-Irx"/>
+                <outlet property="validateTime" destination="C8h-75-Crb" id="5Ia-OZ-iPq"/>
+            </connections>
+            <point key="canvasLocation" x="-80.5" y="-68"/>
+        </tableViewCell>
+    </objects>
+</document>

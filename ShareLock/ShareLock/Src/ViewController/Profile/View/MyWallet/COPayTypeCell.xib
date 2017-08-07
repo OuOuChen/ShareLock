@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" customClass="COPayTypeCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="微信" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqe-ZF-baB">
+                        <rect key="frame" x="51" y="15" width="73" height="21.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="73" id="D67-BD-ftd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_deposit_selected" translatesAutoresizingMaskIntoConstraints="NO" id="9zw-dp-LeU">
+                        <rect key="frame" x="346" y="15" width="21" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="0U3-Qh-e16"/>
+                            <constraint firstAttribute="width" constant="21" id="1WC-ih-d1U"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_deposit_wechat" translatesAutoresizingMaskIntoConstraints="NO" id="Qi6-qh-B4c">
+                        <rect key="frame" x="8" y="8" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="LmS-g9-tEP"/>
+                            <constraint firstAttribute="width" constant="35" id="zzo-pX-NB3"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="9zw-dp-LeU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="CjM-JC-RyW"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9zw-dp-LeU" secondAttribute="trailing" id="H0X-Y6-R98"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="Qi6-qh-B4c" secondAttribute="leading" id="I3z-VL-3Dp"/>
+                    <constraint firstItem="Qi6-qh-B4c" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NGn-VL-Kyj"/>
+                    <constraint firstItem="Qi6-qh-B4c" firstAttribute="centerY" secondItem="lqe-ZF-baB" secondAttribute="centerY" id="pRK-h0-kj9"/>
+                    <constraint firstItem="lqe-ZF-baB" firstAttribute="leading" secondItem="Qi6-qh-B4c" secondAttribute="trailing" constant="8" id="pec-Yv-XfG"/>
+                    <constraint firstItem="lqe-ZF-baB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="xKP-KL-lO7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="loginIcon" destination="Qi6-qh-B4c" id="5o5-ih-uaU"/>
+                <outlet property="selectStata" destination="9zw-dp-LeU" id="as1-yu-OWg"/>
+                <outlet property="titleName" destination="lqe-ZF-baB" id="bk8-U0-EuY"/>
+            </connections>
+            <point key="canvasLocation" x="-940.5" y="-138"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="user_deposit_selected" width="21" height="21"/>
+        <image name="user_deposit_wechat" width="45" height="43"/>
+    </resources>
+</document>

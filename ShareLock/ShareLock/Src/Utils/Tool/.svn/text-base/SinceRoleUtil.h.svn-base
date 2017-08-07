@@ -1,0 +1,61 @@
+//
+//  SinceRoleUtil.h
+//  WITC.SKX
+//
+//  Created by shikexing on 2017/6/5.
+//  Copyright © 2017年 com.witc. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+
+
+/**
+ 自采角色管理
+ */
+@interface SinceRoleUtil : NSObject
+
+
+/**
+ 用户是否拥有自采申请角色
+
+ @return YES:有 NO:无
+ */
++ (BOOL)isPurchase_selfApplyOrderRole;
+
+/**
+ 用户是否拥有自采一级审批角色
+ 
+ @return YES:有 NO:无
+ */
++ (BOOL)isPurchase_selfOneAuditRole;
+
+/**
+ 用户是否拥有自采二级角色
+ 
+ @return YES:有 NO:无
+ */
++ (BOOL)isPurchase_selfTwoAuditRole;
+
+/**自采详情底部按钮权限控制*/
++ (BOOL)isPurchase_selfDetailAddSinceOrder:(NSInteger)billStatus roleType:(NSInteger)roleType; // 详情底部复制新增自采申请单按钮
+
++ (BOOL)isPurchase_selfDetailBatchCheck:(NSInteger)billStatus roleType:(NSInteger)roleType; // 详情底部批量验收按钮
+
++ (BOOL)isPurchase_selfDetailUpdateAndAudit:(NSInteger)billStatus roleType:(NSInteger)roleType; // 详情底部修改审批按钮
+
++ (BOOL)isPurchase_selfDetailPurchasedAndUploadCertificate:(NSInteger)billStatus roleType:(NSInteger)roleType; // 详情底部已采购并上传凭证按钮
+
+// 列表显示汇总分享按钮
++ (BOOL)isPurchase_selfListCollectShare:(NSInteger)billStatus roleType:(NSInteger)roleType;
+
+// 一级&订单主项为待审核 ,用以一级提示一级用户输入参考价等
++ (BOOL)isPurchase_selfDetailRefprice:(SinceStatusType)billStatus roleType:(NSInteger)roleType;
+
+// 一级&订单主项为已审核,用以控制订单详情中提示输入实才数量,实采价视图展示 输入等
++ (BOOL)isPurchase_selfDetailReceive:(SinceStatusType)billStatus shopStatus:(SinceDetailShopStatusType)shopStatus roleType:(NSInteger)roleType;
+
+// 一级&订单主项为已审核或待验收 ,用以上报凭证或退回操作前置条件
++ (BOOL)isPurchase_selfDetailCertificate:(SinceStatusType)billStatus roleType:(NSInteger)roleType;
+
+@end
